@@ -58,3 +58,9 @@
 .hover-effect:hover img {
     transform: scale(1.1); 
 }
+
+.scale-div:hover {
+    transform: scaleY(2);
+    transition: transform 0.5s ease;
+  }
+  
