@@ -1,0 +1,60 @@
+.filtered-bg, .filtered-bg2, .filtered-bg3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    height: 300px;
+}
+
+.filtered-bg::before, .filtered-bg2::before, .filtered-bg3::before {
+    content: ""; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(47, 47, 47, 0.5);
+    z-index: 0;
+}
+
+.filtered-bg svg, .filtered-bg2 img, .filtered-bg3 img {
+    position: relative; 
+    z-index: 1; 
+}
+
+.filtered-bg {
+    background-image: url(/images/csm.png);
+}
+
+.filtered-bg2 {
+    background-image: url(/images/skyline.jpg);
+}
+
+.filtered-bg3 {
+    background-image: url(/images/canada.jpg);
+}
+
+
+
+.filtered-bg, .filtered-bg2, .filtered-bg3 {
+    transition: 0.3s;
+}
+
+.hover-effect svg {
+    transition: transform 0.3s;
+}
+
+.hover-effect:hover svg {
+    transform: scale(1.1); 
+}
+
+.hover-effect img {
+    transition: transform 0.3s;
+}
+
+.hover-effect:hover img {
+    transform: scale(1.1); 
+}
