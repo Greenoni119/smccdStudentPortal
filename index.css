@@ -15,7 +15,7 @@ font-family: 'Nunito', sans-serif;
 }
 
 .filtered-bg::before, .filtered-bg2::before, .filtered-bg3::before {
-    content: ""; 
+    content:""; 
     position: absolute; 
     top: 0;
     left: 0;
