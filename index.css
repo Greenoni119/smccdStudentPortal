@@ -35,14 +35,12 @@ font-family: 'Nunito', sans-serif;
 }
 
 .filtered-bg2 {
-    background-image: url(/images/skyline.jpg);
+    background-image: url(/images/skyline2.jpg);
 }
 
 .filtered-bg3 {
     background-image: url(/images/canada.jpg);
 }
-
-
 
 .filtered-bg, .filtered-bg2, .filtered-bg3 {
     transition: 0.3s;
