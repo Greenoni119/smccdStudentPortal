@@ -7,8 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="index.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Rubik+Mono+One&display=swap" rel="stylesheet">
@@ -16,22 +16,35 @@
         <title>STUDENT PORTAL</title>
     </head>
 
-    <body style="background-color:#C3C8C9; height: 100;" class="max-w-screen-2xl mx-auto">
+    <body style="background-color:#C3C8C9; height:100;" class="max-w-screen-2xl mx-auto">
         <header>
-            <div class="py-2 bg-gray-800">
+            <div class="py-2 bg-gray-800 flex">
                 <div class="container flex items-center justify-between px-4 mx-auto sm:px-6 lg:px-8">
                     <div>
                         <div>
-                            <div class="relative inline-block pr-2 text-left">
-                                <div><button
-                                        class="inline-flex justify-center w-full rounded-md border  border-gray-300 shadow-sm px-3 py-2 bg-[#003365] text-sm font-medium text-gray-50 hover:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
-                                        id="headlessui-menu-button-1" type="button" aria-haspopup="true">Change Site<svg
+                              <div x-data="{ open: false }" class=" justify-center w-full rounded-md border  border-gray-300 shadow-sm px-3 py-2 bg-[#003365] text-sm font-medium text-gray-50 hover:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+                                        <button @click="open = ! open" class="text-white inline-flex">Change Site <svg
                                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke="currentColor" class="w-5 h-5 ml-2 -mr-1" aria-hidden="true">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M19 9l-7 7-7-7"></path>
-                                        </svg></button></div>
-                            </div><span class="pl-1 text-white sr-only lg:not-sr-only">| SMCCD</span>
+                                        </svg></button>
+                                     
+                                        <div x-show="open" @click.outside="open = false" class="text-white z-10">
+                                            <ul>
+                                                <li>canvas</li> 
+                                                <li>degree works</li>
+                                                <li>web schedual</li>
+                                                <li>websmart</li>
+                                                <li>student email</li>
+                                                <li> student success link</li>
+                                                <li>csm</li>
+                                                <li>canada</li>
+                                                <li>skyline</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
                         </div>
                     </div>
                     <div class="flex items-center"><a class="flex items-center mr-2 text-white"
@@ -70,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            <nav class="bg-[#003365]">
+            <nav class="bg-[#003365] z-0">
                 <div class="container flex flex-col items-center justify-between flex-grow px-4 mx-auto sm:px-6 lg:px-8 lg:flex-row">
                   
                     
@@ -166,12 +179,11 @@
 </div>
 </div>
 
-
         <div class="hidden sm:flex w-full justify-center bg-white rounded-lg gap-3">
 
             <a href="#" class="w-1/3 hover-effect p-3">
                 <div class=" filtered-bg rounded-lg overflow-hidden p-1 h-40" > 
-                    <svg version="1.1" class="w-60 mx-auto pt-3 " id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <svg version="1.1" class="w-60 mx-auto pt-2 " id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 300.5 49.6" style="enable-background:new 0 0 300.5 49.6;" xml:space="preserve">
                <style type="text/css">
                    .st0{fill:#FFFFFF;}
@@ -236,17 +248,16 @@
                 </div>
             </a>
 
-            
             <a href="#" class="w-1/3 hover-effect pt-3">
                 <div class="filtered-bg2 rounded-lg overflow-hidden h-40">
-                <img src="/images/skylinelogo2.png" alt="skyline logo" class="w-80  mx-auto p-3">
+                <img src="/images/skylinelogo2.png" alt="skyline logo" class="w-60  mx-auto p-3">
                 </div>
             </a>
 
            
             <a href="#" class="w-1/3 hover-effect p-3">
                 <div class="filtered-bg3 rounded-lg overflow-hidden h-40">
-                <img src="/images/canadalogo.png" alt="canada logo" class="w-80 mx-auto p-3 ">
+                <img src="/images/canadalogo.png" alt="canada logo" class="w-60 mx-auto p-3 ">
                 </div>
             </a>
 
@@ -307,7 +318,7 @@
           </div>
 
     <!-- secound row-->
-          <div class="hidden lg:flex pt-5 justify-center gap-20 mx-auto max-w-screen-xl">
+          <div class="hidden lg:flex pt-4 justify-center gap-20 mx-auto max-w-screen-xl">
 
             <a href="#" class="relative h-40 w-80 pb-5 mt-5">
                 <div id="card1" class="z-1 group absolute mb-2 h-40 w-80 overflow-y-clip rounded-lg bg-white   transition-all duration-500 hover:h-80">
@@ -447,78 +458,13 @@
             </div> 
     </div>
 
-</div>   
+</div>
+
 <br><br><br><br><br><br><br><br>
-<footer class="bg-white dark:bg-gray-900 ">
-    <div class="mx-auto w-full max-w-screen-xl">
-      <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
-        <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                <li class="mb-4">
-                    <a href="#" class=" hover:underline">About</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Careers</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Brand Center</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Blog</a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Discord Server</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Twitter</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Facebook</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Contact Us</a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Privacy Policy</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Licensing</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">iOS</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Android</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Windows</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">MacOS</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div style="background-color:#003365;" class="px-4 py-6 md:flex md:items-center md:justify-between">
+
+<div id="page-container">
+<footer class="static bottom-0">
+    <div style=" background-color:#003365;" class=" w-full px-4 py-6 md:flex md:items-center md:justify-between">
         <div class="flex mt-4 space-x-5 sm:justify-center md:mt-0">
             <a href="#" class="text-white">
                   <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
@@ -552,9 +498,9 @@
               </a>
         </div>
       </div>
-    </div>
+    
 </footer>
-
+</div>
       </body>
 
 </html>
